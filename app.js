@@ -1,3 +1,18 @@
+// Start of Splash code
+
+
+const splash = document.querySelector('.splash');
+
+document.addEventListener('DOMContentLoaded', (e) => {
+    setTimeout(() => {
+        splash.classList.add('display-none');
+
+    }, 2050);
+})
+
+
+// Start of Body code
+
 var origBoard;
 const huPlayer = 'O';
 const aiPlayer = 'X';
@@ -60,7 +75,7 @@ function gameOver(gameWon) {
     for (var i = 0; i < cells.length; i++) {
         cells[i].removeEventListener('click', turnClick, false);
     }
-    declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+    declareWinner(gameWon.player == huPlayer ? "You win! " : "You lose 😏.");
 }
 
 function declareWinner(who) {
@@ -82,7 +97,7 @@ function checkTie() {
             cells[i].style.backgroundColor = "green";
             cells[i].removeEventListener('click', turnClick, false);
         }
-        declareWinner("Tie Game!")
+        declareWinner("Tie Game! 😅 ")
         return true;
     }
     return false;
